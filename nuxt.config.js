@@ -27,7 +27,11 @@ export default {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    {
+      src: '@/assets/styles/main.sass',
+      lang: 'sass'
+    }
   ],
 
   /*
@@ -54,9 +58,19 @@ export default {
   /*
   ** Build configuration
   */
+  buildModules: [
+    '@nuxtjs/style-resources',
+  ],
+
+  styleResources: {
+    sass: [
+      '@/assets/styles/variables.sass'
+    ],
+  },
+
   build: {
     transpile: [/^element-ui/],
-    
+
     /*
     ** You can extend webpack config here
     */
